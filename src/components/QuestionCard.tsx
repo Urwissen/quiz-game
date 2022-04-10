@@ -2,16 +2,26 @@ import React from 'react'
 
 interface Props {
     quesiton: string;
-    answer: string[];
+    answers: string[];
     callback: any;
-    userAnswer: string;
+    userAnswer: any;
     questionNr: number;
     totalQuestions: number;
 }
 
-function QuestionCard({quesiton, answer, callback, userAnswer, questionNr, totalQuestions} : Props): JSX.Element{
+function QuestionCard({quesiton, answers, callback, userAnswer, questionNr, totalQuestions} : Props): JSX.Element{
     return (
-        <div>QuestionCard</div>
+        <div>
+            <p className='number'>Question: {questionNr} / {totalQuestions}</p>
+            <p>{quesiton}</p>
+            <div>
+                {answers.map(answer => {
+                    <div>
+                        <button disabled={userAnswer} onClick={callback}>{answer}</button>
+                    </div>
+                })}
+            </div>
+        </div>
     )
 }
 
