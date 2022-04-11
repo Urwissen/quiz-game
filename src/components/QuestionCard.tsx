@@ -2,7 +2,6 @@ import React from 'react'
 import {Props} from "../interfaces"
 
 function QuestionCard({quesiton, answers, callback, userAnswer, questionNr, totalQuestions} : Props): JSX.Element{
-    console.log("USER ANSWER: ", userAnswer)
     return (
         <div>
             <p className='number'>Question: {questionNr} / {totalQuestions}</p>

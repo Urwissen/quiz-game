@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { fetchQuestions } from './API';
 
 // IMPORT COMPONENTS
@@ -32,7 +32,6 @@ function App() {
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
-      console.log("CLICKED!")
       const answer = e.currentTarget.value
       const correct = questions[number].correct_answer === answer
       if (correct) setScore(prev => prev + 1);
@@ -43,7 +42,6 @@ function App() {
         correctAnswer: questions[number].correct_answer
       }
       setUserAnswers(prev => [...prev, answerObject])
-      
     }
   }
 
@@ -63,9 +61,6 @@ function App() {
     setNumber(0)
     setLoading(false)
   }
-
-  // LOG STATE
-  console.log(questions)
 
   return (
     <div className="App">
