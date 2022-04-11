@@ -10,7 +10,9 @@ function QuestionCard({quesiton, answers, callback, userAnswer, questionNr, tota
             <div>
                 {answers.map((answer) => (
                     <div key={answer}>
-                        <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>{answer}</button>
+                        <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
+                            <pre>{answer}</pre>
+                        </button>
                     </div>
                 ))}
             </div>

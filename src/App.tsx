@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { fetchQuestions } from './API';
 
-// COMPONENTS
+// IMPORT COMPONENTS
 import QuestionCard from './components/QuestionCard';
 
-// INTERFACES
+// IMPORT INTERFACES & TYPES
 import { QuestionState,  Difficulty, AnswerObject } from "./interfaces"
-
-
 
 const TOTAL_QUESTIONS = 10;
 
@@ -50,7 +48,8 @@ function App() {
   }
 
   const nextQuestion = () => {
-    if(number < TOTAL_QUESTIONS -1) {
+    const num = TOTAL_QUESTIONS + 1
+    if(number < num) {
       setNumber(prev => prev +1)
     } else {
       setGameOver(true)
@@ -72,7 +71,7 @@ function App() {
     <div className="App">
       <h1>React Quiz</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ?
-        <button className='start' onClick={startTrivia}>Start</button> : null
+        <button className='start' onClick={startTrivia}>{gameOver ? "Start" : "Restart"}</button> : null
       }
       
       {!gameOver ? 
