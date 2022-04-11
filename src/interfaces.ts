@@ -34,3 +34,9 @@ export interface AnswerObject {
     correct: boolean,
     correctAnswer: string
 }
+
+// STYLES 
+export interface Wrapper {
+    correct: boolean,
+    userClicked: boolean
+}
