@@ -90,7 +90,7 @@ function App() {
             callback={checkAnswer}
           /> : null}
 
-        {number < TOTAL_QUESTIONS -1 && !gameOver? 
+        {number < TOTAL_QUESTIONS -1 && !gameOver && userAnswers.length === number +1? 
           <button className='next' onClick={nextQuestion}>Next Question</button> : null
         }
         
